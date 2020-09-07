@@ -1,5 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
+    <!-- Header內容 -->
     <q-header elevated>
       <q-toolbar>
         <q-btn
@@ -19,6 +20,7 @@
       </q-toolbar>
     </q-header>
 
+    <!-- 可選, 左側欄的內容 -->
     <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
@@ -40,9 +42,49 @@
       </q-list>
     </q-drawer>
 
+    <!-- 必要 -->
     <q-page-container>
+      <!-- 頁面容器，頁面都放在這下面，
+      容器內的第一個頁面的外層一定要用 <q-page> 包起來，之後就能透過 vue router 渲染頁面了
+      -->
       <router-view />
     </q-page-container>
+
+    <!-- 加上 footer 來看看 -->
+          <q-footer>
+        <q-toolbar>
+          <q-toolbar-title>Footer</q-toolbar-title>
+        </q-toolbar>
+      </q-footer>
+
+            <q-drawer
+        v-model="drawerLeft"
+        :width="200"
+        :breakpoint="700"
+        bordered
+        content-class="bg-grey-3"
+      >
+        <q-scroll-area class="fit">
+          <div class="q-pa-sm">
+            <div v-for="n in 20" :key="n">Drawer {{ n }} / 20</div>
+          </div>
+        </q-scroll-area>
+      </q-drawer>
+
+      <q-drawer
+        side="right"
+        v-model="drawerRight"
+        bordered
+        :width="200"
+        :breakpoint="500"
+        content-class="bg-grey-3"
+      >
+        <q-scroll-area class="fit">
+          <div class="q-pa-sm">
+            <div v-for="n in 20" :key="n">Drawer {{ n }} / 20</div>
+          </div>
+        </q-scroll-area>
+      </q-drawer>
   </q-layout>
 </template>
 
@@ -100,7 +142,9 @@ export default {
   data () {
     return {
       leftDrawerOpen: false,
-      essentialLinks: linksData
+      essentialLinks: linksData,
+      drawerLeft: false,
+      drawerRight: true
     }
   }
 }
