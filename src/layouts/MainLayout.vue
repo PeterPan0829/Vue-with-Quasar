@@ -7,7 +7,7 @@
 
     <!-- Header內容 -->
     <q-header elevated>
-      <q-toolbar>
+      <q-toolbar class="bg-primary text-white">
         <q-btn
           flat
           dense
@@ -17,11 +17,25 @@
           @click="leftDrawerOpen = !leftDrawerOpen"
         />
 
+      <q-avatar>
+        <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
+      </q-avatar>
+
         <q-toolbar-title>
-          Quasar App
+          S2 FORWARDER
+          <!-- TODO: -->
+          <div slot="subtitle">asdasd</div>
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+                <div class="gt-xs">
+          <q-btn flat class="q-mr-md">HOME</q-btn>
+          <q-btn flat class="q-mr-md">SERVICES</q-btn>
+          <q-btn flat class="q-mr-md">INDUSTRIES</q-btn>
+          <q-btn flat class="q-mr-md">LOGIN</q-btn>
+          <q-btn flat class="q-mr-md">SIGN UP</q-btn>
+        </div>
+
+        <!-- <div>Quasar v{{ $q.version }}</div> -->
       </q-toolbar>
     </q-header>
 
@@ -149,7 +163,9 @@ export default {
       leftDrawerOpen: false,
       essentialLinks: linksData,
       drawerLeft: false,
-      drawerRight: true
+      drawerRight: true,
+      subtitle: 'Take a break ...' // TODO:
+
     }
   },
   methods: {
