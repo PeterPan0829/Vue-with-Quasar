@@ -1,5 +1,10 @@
 <template>
   <q-layout view="lHh Lpr lFf">
+
+    <q-page-sticky class="sticky" position="top-left" :offset="[18, 18]" :content-style="{color:'red'}">
+      <q-btn round color="primary" @click="alertHandler" icon="alarm" />
+    </q-page-sticky>
+
     <!-- Header內容 -->
     <q-header elevated>
       <q-toolbar>
@@ -146,6 +151,20 @@ export default {
       drawerLeft: false,
       drawerRight: true
     }
+  },
+  methods: {
+    alertHandler () {
+      alert('TEST')
+    }
   }
 }
 </script>
+
+<style lang="scss">
+  // :content-style="{color:'red'}"
+
+  // .sticky{
+  //   cursor: pointer;
+  // }
+
+</style>
