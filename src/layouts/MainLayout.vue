@@ -24,10 +24,10 @@
         <q-toolbar-title>
           S2 FORWARDER
           <!-- TODO: -->
-          <div slot="subtitle">asdasd</div>
+          <div slot="subtitle">TEST</div>
         </q-toolbar-title>
 
-                <div class="gt-xs">
+        <div class="gt-xs">
           <q-btn flat class="q-mr-md">HOME</q-btn>
           <q-btn flat class="q-mr-md">SERVICES</q-btn>
           <q-btn flat class="q-mr-md">INDUSTRIES</q-btn>
@@ -76,12 +76,13 @@
         </q-toolbar>
       </q-footer>
 
-            <q-drawer
+      <q-drawer
         v-model="drawerLeft"
         :width="200"
         :breakpoint="700"
         bordered
         content-class="bg-grey-3"
+      side="right"
       >
         <q-scroll-area class="fit">
           <div class="q-pa-sm">
@@ -176,7 +177,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style rel="stylesheet/scss" lang="scss" scoped>
   // :content-style="{color:'red'}"
 
   // .sticky{
