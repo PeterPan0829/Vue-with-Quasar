@@ -1,25 +1,31 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-
-    <q-page-sticky class="sticky" position="top-left" :offset="[18, 18]" :content-style="{color:'red'}">
+    <q-page-sticky
+      class="sticky"
+      position="top-left"
+      :offset="[18, 18]"
+      :content-style="{ color: 'red' }"
+    >
       <q-btn round color="primary" @click="alertHandler" icon="alarm" />
     </q-page-sticky>
 
     <!-- Header內容 -->
     <q-header elevated>
       <q-toolbar class="bg-primary text-white">
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="leftDrawerOpen = !leftDrawerOpen"
-        />
+        <div class="lt-sm">
+          <q-btn
+            flat
+            dense
+            round
+            icon="menu"
+            aria-label="Menu"
+            @click="leftDrawerOpen = !leftDrawerOpen"
+          />
+        </div>
 
-      <q-avatar>
-        <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
-      </q-avatar>
+        <q-avatar>
+          <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg" />
+        </q-avatar>
 
         <q-toolbar-title>
           S2 FORWARDER
@@ -47,11 +53,8 @@
       content-class="bg-grey-1"
     >
       <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
-          Essential Links
+        <q-item-label header class="text-grey-8">
+          S2 FORWARDER
         </q-item-label>
         <EssentialLink
           v-for="link in essentialLinks"
@@ -70,41 +73,41 @@
     </q-page-container>
 
     <!-- 加上 footer 來看看 -->
-          <q-footer>
-        <q-toolbar>
-          <q-toolbar-title>Footer</q-toolbar-title>
-        </q-toolbar>
-      </q-footer>
+    <q-footer>
+      <q-toolbar>
+        <q-toolbar-title>Footer</q-toolbar-title>
+      </q-toolbar>
+    </q-footer>
 
-      <q-drawer
-        v-model="drawerLeft"
-        :width="200"
-        :breakpoint="700"
-        bordered
-        content-class="bg-grey-3"
+    <q-drawer
+      v-model="drawerLeft"
+      :width="200"
+      :breakpoint="700"
+      bordered
+      content-class="bg-grey-3"
       side="right"
-      >
-        <q-scroll-area class="fit">
-          <div class="q-pa-sm">
-            <div v-for="n in 20" :key="n">Drawer {{ n }} / 20</div>
-          </div>
-        </q-scroll-area>
-      </q-drawer>
+    >
+      <q-scroll-area class="fit">
+        <div class="q-pa-sm">
+          <div v-for="n in 20" :key="n">Drawer {{ n }} / 20</div>
+        </div>
+      </q-scroll-area>
+    </q-drawer>
 
-      <q-drawer
-        side="right"
-        v-model="drawerRight"
-        bordered
-        :width="200"
-        :breakpoint="500"
-        content-class="bg-grey-3"
-      >
-        <q-scroll-area class="fit">
-          <div class="q-pa-sm">
-            <div v-for="n in 20" :key="n">Drawer {{ n }} / 20</div>
-          </div>
-        </q-scroll-area>
-      </q-drawer>
+    <q-drawer
+      side="right"
+      v-model="drawerRight"
+      bordered
+      :width="200"
+      :breakpoint="500"
+      content-class="bg-grey-3"
+    >
+      <q-scroll-area class="fit">
+        <div class="q-pa-sm">
+          <div v-for="n in 20" :key="n">Drawer {{ n }} / 20</div>
+        </div>
+      </q-scroll-area>
+    </q-drawer>
   </q-layout>
 </template>
 
@@ -113,47 +116,47 @@ import EssentialLink from 'components/EssentialLink.vue'
 
 const linksData = [
   {
-    title: 'Docs',
+    title: 'HOME',
     caption: 'quasar.dev',
     icon: 'school',
     link: 'https://quasar.dev'
   },
   {
-    title: 'Github',
+    title: 'SERVICES',
     caption: 'github.com/quasarframework',
     icon: 'code',
     link: 'https://github.com/quasarframework'
   },
   {
-    title: 'Discord Chat Channel',
+    title: 'INDUSTRIES',
     caption: 'chat.quasar.dev',
     icon: 'chat',
     link: 'https://chat.quasar.dev'
   },
   {
-    title: 'Forum',
+    title: 'LOGIN',
     caption: 'forum.quasar.dev',
     icon: 'record_voice_over',
     link: 'https://forum.quasar.dev'
   },
   {
-    title: 'Twitter',
+    title: 'SIGN UP',
     caption: '@quasarframework',
     icon: 'rss_feed',
     link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
   }
+  // {
+  //   title: 'Facebook',
+  //   caption: '@QuasarFramework',
+  //   icon: 'public',
+  //   link: 'https://facebook.quasar.dev'
+  // },
+  // {
+  //   title: 'Quasar Awesome',
+  //   caption: 'Community Quasar projects',
+  //   icon: 'favorite',
+  //   link: 'https://awesome.quasar.dev'
+  // }
 ]
 
 export default {
@@ -166,7 +169,6 @@ export default {
       drawerLeft: false,
       drawerRight: true,
       subtitle: 'Take a break ...' // TODO:
-
     }
   },
   methods: {
@@ -179,10 +181,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style rel="stylesheet/scss" lang="scss" scoped>
-  // :content-style="{color:'red'}"
+// :content-style="{color:'red'}"
 
-  // .sticky{
-  //   cursor: pointer;
-  // }
-
+// .sticky{
+//   cursor: pointer;
+// }
 </style>
