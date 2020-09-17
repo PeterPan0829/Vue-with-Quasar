@@ -6,6 +6,8 @@
       arrows
       navigation
       infinite
+      autoplay
+
     >
       <q-carousel-slide :name="1" img-src="../../assets/Austrian-forwarder.jpg" />
       <q-carousel-slide :name="2" img-src="../../assets/shipping_forwarder_freight_services.jpg" />

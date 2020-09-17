@@ -1,5 +1,7 @@
 <template>
-  <section-carousel/>
+  <q-page>
+    <section-carousel />
+  </q-page>
 </template>
 
 <script>
