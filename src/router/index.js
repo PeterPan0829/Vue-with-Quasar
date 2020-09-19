@@ -9,6 +9,7 @@ import {
   QCarousel,
   QCarouselControl,
   QCarouselSlide
+
 } from 'quasar'
 
 Vue.use(VueRouter, Quasar, {
@@ -16,6 +17,7 @@ Vue.use(VueRouter, Quasar, {
     QCarousel,
     QCarouselControl,
     QCarouselSlide
+
   }
 })
 

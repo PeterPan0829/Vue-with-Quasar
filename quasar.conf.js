@@ -88,7 +88,9 @@ module.exports = function ( /* ctx */ ) {
         'QPageSticky',
         'QCarousel',
         'QCarouselSlide',
-        'QCarouselControl'
+        'QCarouselControl',
+        'QInput',
+        'QAutocomplete'
       ],
 
       // Possible values for "importStrategy":
